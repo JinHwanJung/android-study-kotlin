@@ -10,8 +10,25 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
+
+    fun add(a: Int, b: Int): Int {
+        return a+b
+    }
+
+    fun add2(a: Int, b: Int): Int = a + b
+
+    fun Int.add3(b: Int) = this + b
+
+    infix fun Int.add4(b: Int) = this + b
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun test_main() {
+        println("add : ${add(3,4)}")
+
+        println("add2 : ${add2(3,4)}")
+
+        println("add3 : ${3.add3(4)}")
+
+        println("add4 : ${3 add4 4}")
     }
 }
